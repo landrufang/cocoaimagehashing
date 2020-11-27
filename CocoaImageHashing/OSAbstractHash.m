@@ -37,6 +37,20 @@
     return result;
 }
 
+- (OSHashDistanceType)dataHashDistance:(NSData*)leftHand to:(NSData*)rightHand
+{
+    NSAssert(leftHand, @"Left hand image data must not be null");
+    NSAssert(rightHand, @"Right hand image data must not be null");
+    OSHashType leftHandImageDataHash = [self hashImageData:leftHand];
+    OSHashType rightHandImageDataHash = [self hashImageData:rightHand];
+    if (leftHandImageDataHash == OSHashTypeError || rightHandImageDataHash == OSHashTypeError) {
+        return NO;
+    }
+    OSHashDistanceType distance = [self hashDistance:leftHandImageDataHash
+                                                  to:rightHandImageDataHash];
+    return distance;
+}
+
 - (OSHashDistanceType)hashDistance:(OSHashType)leftHand
                                 to:(OSHashType)rightHand
 {

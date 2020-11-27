@@ -10,9 +10,9 @@
 #import "OSDHash.h"
 #import "OSFastGraphics.h"
 
-static const NSUInteger OSDHashImageWidthInPixels = 9;
-static const NSUInteger OSDHashImageHeightInPixels = 9;
-static const OSHashDistanceType OSDHashDistanceThreshold = 9;
+static const NSUInteger OSDHashImageWidthInPixels = 32;
+static const NSUInteger OSDHashImageHeightInPixels = 32;
+static const OSHashDistanceType OSDHashDistanceThreshold = 25;
 
 @implementation OSDHash
 

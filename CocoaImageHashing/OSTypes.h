@@ -93,6 +93,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (instancetype)sharedInstance;
 
+- (OSHashDistanceType)dataHashDistance:(NSData*)leftHand to:(NSData*)rightHand;
 /**
  * Calculate the fingerprint/hash for a given image.
  *

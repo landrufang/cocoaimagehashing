@@ -31,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - OSImageHashingProvider parametrizations
 
+- (OSHashDistanceType)dataHashDistance:(NSData*)leftHand to:(NSData*)rightHand;
+
 /**
  * @see -[OSImageHashingProvider hashDistance:to:]
  */

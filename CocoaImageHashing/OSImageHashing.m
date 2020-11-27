@@ -24,6 +24,17 @@
 
 #pragma mark - OSImageHashingProvider
 
+
+- (OSHashDistanceType)dataHashDistance:(NSData*)leftHand to:(NSData*)rightHand
+{
+    OSImageHashingProviderId providerId = OSImageHashingProviderDefaultProviderId();
+    NSArray<id<OSImageHashingProvider>> *hashingProviders = NSArrayForProvidersFromOSImageHashingProviderId(providerId);
+    for (id<OSImageHashingProvider> hashingProvider in hashingProviders) {
+        return [hashingProvider dataHashDistance:leftHand to:rightHand];
+    }
+    return 99;
+}
+
 - (OSHashDistanceType)hashDistance:(OSHashType)leftHand
                                 to:(OSHashType)rightHand
 {
